@@ -42,17 +42,19 @@ const AddItem = (props) => {
           <h2>Add New Item</h2>
         </header>
         <form onSubmit={submitHandler} className={style.content}>
+          <div className={style.formgrid}>
           <label htmlFor='name'>Name:</label>
           <input type='text' required ref={nameRef}/>
           <label htmlFor='quantity'>Quantity:</label>
           <input type='number' required min="1" ref={quantityRef}/>
           <label htmlFor='category'>Category:</label>
           <NewItemCategories passCategoryId={fetchCategoryId} />
-          <button>Submit</button>
-        </form>
+          </div>
         <footer className={style.actions}>
+          <Button type='submit'>Submit</Button>
           <Button onClick={props.onConfirm}>Cancel</Button> 
         </footer>
+        </form>
       </Card>
     </div>
   );

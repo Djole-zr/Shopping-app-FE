@@ -44,7 +44,7 @@ const ShowList = (props) => {
     }
 
 
-    let content = <p>Chose the list</p>;
+    let content = <h2>Chose the list</h2>;
 
     if (listData.items) {
         content = <ListItems passListData={listData} />

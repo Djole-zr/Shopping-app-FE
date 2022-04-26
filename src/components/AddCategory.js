@@ -35,15 +35,17 @@ const AddCategory = (props) => {
           <h2>Add New Category</h2>
         </header>
         <form onSubmit={submitHandler} className={style.content}>
+          <div className={style.formgrid}>
           <label htmlFor='name'>Name:</label>
           <input type='text' id='name' required ref={nameRef}/>
           <label htmlFor='description'>Description:</label>
           <input type='text' id='description' required ref={descriptionRef}/>
-          <button>Submit</button>
-        </form>
+          </div>
         <footer className={style.actions}>
+          <Button type='submit'>Submit</Button>
           <Button onClick={props.onConfirm}>Cancel</Button> 
         </footer>
+        </form>
       </Card>
     </div>
   );

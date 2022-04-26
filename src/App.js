@@ -10,6 +10,7 @@ function App() {
   const [lists, setLists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [refresh, setRefresh] = useState(true);
   const [listId, setListId] = useState('');
   
 
@@ -39,7 +40,7 @@ function App() {
 
 useEffect(() => {
   fetchListsHandler();
-}, [lists]);
+}, [lists, refresh]);
 
 function addListHandler(list) {
   fetch('http://localhost:8080/lists', {
@@ -49,18 +50,19 @@ function addListHandler(list) {
       'Content-Type': 'application/json'
     }
   })
+  setRefresh(!refresh);
 }
 
 function passData(data) {
   setListId(data)
 }
 
-let content = <p>Found no lists.</p>;
+let content = <h2>Found no lists.</h2>;
 
 if (lists.length) {
   content = <Lists fetchId={passData} lists={lists} />
 } else if (error) {
-  content = <p>{error}</p>
+  content = <h2>{error}</h2>
 }
 
 

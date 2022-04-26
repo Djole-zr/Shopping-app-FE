@@ -21,6 +21,7 @@ function AddList(props) {
     };
 
     props.onAddList(list); 
+    console.log(list)
   }
   
 
@@ -41,13 +42,13 @@ function AddList(props) {
     </div>
     <form onSubmit={submitHandler}>
       <div className={style.control}>
-        <label htmlFor='listname'>Name:</label>
-        <input type='text' id='listname' className={style.listnameinput} required ref={nameRef} />
+        <label htmlFor='name'>Name:</label>
+        <input type='text' id='name' className={style.listnameinput} required ref={nameRef} />
         <label htmlFor='shop'>Shop:</label>
           <Shops passShopId={fetchShopId} />
         <Button type='button' onClick={showAddShop}><BsPlusLg /> Shop</Button>
       </div>
-      <Button>Add List</Button>
+      <Button type="submit">Add List</Button>
     </form>
     </React.Fragment>
   );

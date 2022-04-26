@@ -37,9 +37,15 @@
   justify-content: flex-end;
 }
 
+.formgrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
 @media (min-width: 768px) {
   .modal {
     left: calc(50% - 20rem);
     width: 40rem;
   }
 }
+

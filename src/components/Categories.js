@@ -18,7 +18,7 @@ const Categories = (props) => {
     }
 
     return (
-      <select name="category" onChange={collectCategoryId} value={props.chosen._id} required>
+      <select name="category" onChange={collectCategoryId} required>
         <option value={''}>Choose Category</option>
         {categoryData.map((category) => (
           <option key={category._id} value={category._id}>

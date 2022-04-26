@@ -38,17 +38,19 @@ const AddShop = (props) => {
           <h2>Add New Shop</h2>
         </header>
         <form onSubmit={submitHandler} className={style.content}>
+          <div className={style.formgrid}>
           <label htmlFor='name'>Name:</label>
           <input type='text' id='name' required ref={nameRef} />
           <label htmlFor='address'>Address:</label>
           <input type='text' id='address' required ref={addressRef} />
           <label htmlFor='city'>City:</label>
           <input type='text' id='city' required ref={cityRef} />
-          <button>Submit</button>
-        </form>
+          </div>
         <footer className={style.actions}>
+          <Button type="submit">Submit</Button>
           <Button onClick={props.onConfirm}>Cancel</Button> 
         </footer>
+        </form>
       </Card>
     </div>
   );

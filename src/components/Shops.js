@@ -4,18 +4,12 @@ import { useState, useEffect } from "react";
 
 const Shops = (props) => {
     const [shopData, setShopData] = useState([]);
-    const [error, setError] = useState(null);
     const fetchShopsHandler = async function () {      
-      try {
         const response = await fetch('http://localhost:8080/shops')
         const data = await response.json();
           setShopData(data.shop); 
-      } catch (err) {
-        setError('No shops');
-        console.log(err);
-      }
-      
-    }
+      }      
+  
 
     useEffect(() => {
       fetchShopsHandler();
